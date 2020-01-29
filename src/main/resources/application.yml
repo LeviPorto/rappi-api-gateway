@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: rappiapigateway
+  cloud:
+    gateway:
+      routes:
+        - id: evaluator
+          uri: lb://rappievaluator/
+          predicates:
+          - Path=/evaluator/**
+        - id: tracker
+          uri: lb://rappitracker/
+          predicates:
+          - Path=/tracker/**
+        - id: deliverer
+          uri: lb://rappideliverer/
+          predicates:
+          - Path=/deliverer/**
+        - id: manager
+          uri: lb://rappimanager/
+          predicates:
+          - Path=/manager/**
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+server:
+  port: ${PORT:8080}
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka/}
+  instance:
+    preferIpAddress: true
+
