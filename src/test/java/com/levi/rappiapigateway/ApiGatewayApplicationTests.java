@@ -1,4 +1,4 @@
-package com.levi.apigateway;
+package com.levi.rappiapigateway;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

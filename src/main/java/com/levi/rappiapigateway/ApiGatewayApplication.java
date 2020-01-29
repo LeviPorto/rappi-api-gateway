@@ -1,4 +1,4 @@
-package com.levi.apigateway;
+package com.levi.rappiapigateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
